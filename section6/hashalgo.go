@@ -7,7 +7,7 @@ import (
 )
 
 type KeyValuePair struct {
-	key   string
+	Key   string
 	Value any
 }
 
@@ -40,14 +40,21 @@ func (ht *HashTable) Hash(key string) int {
 	return int(hashInt.Int64() % int64(ht.size))
 }
 
-func (ht *HashTable) Add(key string, value any) int {
+func (ht *HashTable) Add(key string, value any) {
 	index := ht.hash(key)
-	for data 
-	
+	for i, kv := range ht.table[index] {
+		if kv.Key == key {
+			ht.table[index][i].Value = value
+			return
+		}
+	}
+	ht.table[index] = append(ht.table[index], KeyValuePair{Key: key, Value: value})
 }
 
 func (ht *HashTable) Print() {
-
+	for i, kv := range ht.table {
+		print(i, "-->")
+	}
 }
 
 func (ht *HashTable) Get(key string) (any, bool) {
