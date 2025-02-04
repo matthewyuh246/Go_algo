@@ -76,18 +76,18 @@ func (ht *HashTable) Get(key string) (any, bool) {
 	return nil, false
 }
 
-func main() {
-	var ht IHashTable = NewHashTable(10)
-	ht.Add("car", "Tesla")
-	ht.Add("car", "Toyota")
-	ht.Add("pc", "Mac")
-	ht.Add("sns", "Youtube")
+// func main() {
+// 	var ht IHashTable = NewHashTable(10)
+// 	ht.Add("car", "Tesla")
+// 	ht.Add("car", "Toyota")
+// 	ht.Add("pc", "Mac")
+// 	ht.Add("sns", "Youtube")
 
-	ht.Print()
+// 	ht.Print()
 
-	if value, found := ht.Get("sns"); found {
-		fmt.Println("sns:", value)
-	} else {
-		fmt.Println("sns not found")
-	}
-}
+// 	if value, found := ht.Get("sns"); found {
+// 		fmt.Println("sns:", value)
+// 	} else {
+// 		fmt.Println("sns not found")
+// 	}
+// }
