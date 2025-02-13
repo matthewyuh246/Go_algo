@@ -4,17 +4,18 @@ import "fmt"
 
 // ILinkedList インターフェース
 type ILinkedList interface {
-	Append(data any)
-	Insert(data any)
-	Remove(data any)
+	Append(data int)
+	Insert(data int)
+	Remove(data int)
 	Print()
 	ReverseIterative()
 	ReverseRecursive()
+	ReverseEven()
 }
 
 // Node 構造体 (連結リストのノード)
 type Node struct {
-	Data any
+	Data int
 	Next *Node
 }
 
@@ -29,7 +30,7 @@ func NewLinkedList() ILinkedList {
 }
 
 // Append は末尾にノードを追加
-func (l *LinkedList) Append(data any) {
+func (l *LinkedList) Append(data int) {
 	newNode := &Node{Data: data}
 
 	if l.Head == nil {
@@ -45,13 +46,13 @@ func (l *LinkedList) Append(data any) {
 }
 
 // Insert は先頭にノードを挿入
-func (l *LinkedList) Insert(data any) {
+func (l *LinkedList) Insert(data int) {
 	newNode := &Node{Data: data, Next: l.Head}
 	l.Head = newNode
 }
 
 // Remove は指定した値のノードを削除
-func (l *LinkedList) Remove(data any) {
+func (l *LinkedList) Remove(data int) {
 	currentNode := l.Head
 
 	if currentNode != nil && currentNode.Data == data {
@@ -110,20 +111,54 @@ func (l *LinkedList) reverseRecursiveHelper(currentNode, previousNode *Node) *No
 	return l.reverseRecursiveHelper(nextNode, currentNode)
 }
 
+func (l *LinkedList) ReverseEven() {
+	l.Head = l.reverseEvenHelper(l.Head, nil)
+}
+
+func (l *LinkedList) reverseEvenHelper(head, prev *Node) *Node {
+	if head == nil {
+		return nil
+	}
+
+	current := head
+	var next *Node
+
+	for current != nil && current.Data%2 == 0 {
+		next = current.Next
+		current.Next = prev
+		prev = current
+		current = next
+	}
+
+	if current != head {
+		head.Next = current
+		l.reverseEvenHelper(current, nil)
+		return prev
+	} else {
+		head.Next = l.reverseEvenHelper(head.Next, head)
+		return head
+	}
+}
+
 func main() {
 	// ILinkedList インターフェースとして LinkedList を利用
 	var l ILinkedList = NewLinkedList()
 
-	l.Append(0)
 	l.Append(1)
 	l.Append(2)
+	l.Append(4)
+	l.Append(6)
 	l.Append(3)
+	l.Append(8)
+	l.Append(10)
+	l.Append(12)
+	l.Append(5)
 
 	fmt.Println("Original List:")
 	l.Print()
 
 	fmt.Println("######################")
-	l.ReverseIterative()
+	l.ReverseEven()
 	fmt.Println("After Iterative Reverse:")
 	l.Print()
 

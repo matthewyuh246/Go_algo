@@ -1,11 +1,5 @@
 package main
 
-import (
-	"fmt"
-	"math/rand"
-	"time"
-)
-
 func cocktail_sort(numbers []int) []int {
 	len_numbers := len(numbers)
 	swapped := true
@@ -38,12 +32,12 @@ func cocktail_sort(numbers []int) []int {
 	return numbers
 }
 
-func main() {
-	numbers := make([]int, 10)
-	rng := rand.New(rand.NewSource(time.Now().UnixNano()))
-	for i := range numbers {
-		numbers[i] = rng.Intn(1001)
-	}
+// func main() {
+// 	numbers := make([]int, 10)
+// 	rng := rand.New(rand.NewSource(time.Now().UnixNano()))
+// 	for i := range numbers {
+// 		numbers[i] = rng.Intn(1001)
+// 	}
 
-	fmt.Print(cocktail_sort(numbers))
-}
+// 	fmt.Print(cocktail_sort(numbers))
+// }
