@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	// "fmt"
 	"math"
 )
 
@@ -46,8 +46,8 @@ func listToIntPlusOne(numbers []int) int {
 	return listToInt(numbers)
 }
 
-func main() {
-	fmt.Println(listToIntPlusOne([]int{1, 2, 3, 9})) // 1240
-	fmt.Println(listToIntPlusOne([]int{9, 9, 9}))    // 1000
-	fmt.Println(listToIntPlusOne([]int{0, 1, 2}))    // 13
-}
+// func main() {
+// 	fmt.Println(listToIntPlusOne([]int{1, 2, 3, 9})) // 1240
+// 	fmt.Println(listToIntPlusOne([]int{9, 9, 9}))    // 1000
+// 	fmt.Println(listToIntPlusOne([]int{0, 1, 2}))    // 13
+// }
