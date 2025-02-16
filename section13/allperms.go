@@ -1,6 +1,6 @@
 package main
 
-import "fmt"
+// import "fmt"
 
 func allPerms(elements []int) [][]int {
 	if len(elements) <= 1 {
@@ -26,10 +26,10 @@ func allPerms(elements []int) [][]int {
 	return result
 }
 
-func main() {
-	nums := []int{1, 2, 3, 4}
-	perms := allPerms(nums)
-	for _, p := range perms {
-		fmt.Println(p)
-	}
-}
+// func main() {
+// 	nums := []int{1, 2, 3, 4}
+// 	perms := allPerms(nums)
+// 	for _, p := range perms {
+// 		fmt.Println(p)
+// 	}
+// }
