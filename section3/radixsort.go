@@ -1,10 +1,10 @@
 package main
 
-import (
-	"fmt"
-	"math/rand"
-	"time"
-)
+// import (
+// 	"fmt"
+// 	"math/rand"
+// 	"time"
+// )
 
 func maxNum1(numbers []int) int {
 	max := numbers[0]
@@ -51,11 +51,11 @@ func radixSort(numbers []int) []int {
 	return numbers
 }
 
-func main() {
-	numbers := make([]int, 10)
-	rng := rand.New(rand.NewSource(time.Now().UnixNano()))
-	for i := range numbers {
-		numbers[i] = rng.Intn(1001)
-	}
-	fmt.Println(radixSort(numbers))
-}
+// func main() {
+// 	numbers := make([]int, 10)
+// 	rng := rand.New(rand.NewSource(time.Now().UnixNano()))
+// 	for i := range numbers {
+// 		numbers[i] = rng.Intn(1001)
+// 	}
+// 	fmt.Println(radixSort(numbers))
+// }
