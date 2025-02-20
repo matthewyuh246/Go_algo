@@ -1,6 +1,6 @@
 package main
 
-import "fmt"
+// import "fmt"
 
 func partition(numbers []int, low, high int) int {
 	pivot := numbers[high]
@@ -29,8 +29,8 @@ func quickSort(numbers []int) []int {
 	return numbers
 }
 
-func main() {
-	nums := []int{8, 1, 4, 2, 9, 8, 3}
-	sortedNums := quickSort(nums)
-	fmt.Println(sortedNums)
-}
+// func main() {
+// 	nums := []int{8, 1, 4, 2, 9, 8, 3}
+// 	sortedNums := quickSort(nums)
+// 	fmt.Println(sortedNums)
+// }
