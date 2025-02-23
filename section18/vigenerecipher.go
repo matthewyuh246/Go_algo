@@ -1,6 +1,6 @@
 package main
 
-import "fmt"
+// import "fmt"
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
@@ -41,11 +41,11 @@ func decrypt(cipherText, key string) string {
 	return result
 }
 
-func main() {
-	t := "ATTACK SILICON VALLEY"
-	k := generateKey(t, "HELLO")
-	e := encrypt(t, k)
-	fmt.Println(e)
-	d := decrypt(e, k)
-	fmt.Println(d)
-}
+// func main() {
+// 	t := "ATTACK SILICON VALLEY"
+// 	k := generateKey(t, "HELLO")
+// 	e := encrypt(t, k)
+// 	fmt.Println(e)
+// 	d := decrypt(e, k)
+// 	fmt.Println(d)
+// }
