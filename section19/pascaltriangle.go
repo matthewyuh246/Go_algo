@@ -56,7 +56,7 @@ func printPascal(data [][]int) {
 	}
 }
 
-func main() {
-	triangle := generatePascalTriangle(10)
-	printPascal(triangle)
-}
+// func main() {
+// 	triangle := generatePascalTriangle(10)
+// 	printPascal(triangle)
+// }
